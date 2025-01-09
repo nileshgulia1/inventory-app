@@ -81,12 +81,7 @@ function ModalForm({ onSubmit, setOpen, open, element }) {
       open={open}
       size="small"
       onClose={handleClose}
-      style={{
-        backgroundColor: "#333",
-        color: "#fff",
-        padding: "20px",
-        borderRadius: "10px",
-      }}
+      className="modal-form"
     >
       <Header inverted style={{ color: "#fff" }}>
         Edit Product:

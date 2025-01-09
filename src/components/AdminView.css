@@ -2,3 +2,10 @@ tr.row-disabled {
   background: #3d3c3c;
   color: #4e5052;
 }
+
+.modal-form {
+  background-color: #333 !important;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import cx from "classnames";
-import "./AdminView.css";
-
 import { Table, Button, Header, Grid, Segment, Icon } from "semantic-ui-react";
+
 import ModalForm from "./ModalForm";
+import "./AdminView.css";
 
 const AdminView = ({ inventory, isAdmin }) => {
   const [data, setData] = useState(inventory ?? []);
