@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import cx from "classnames";
 import { Table, Button, Header, Grid, Segment, Icon } from "semantic-ui-react";
 
@@ -9,7 +9,7 @@ const AdminView = ({ inventory, isAdmin }) => {
   const [data, setData] = useState(inventory ?? []);
   const [open, setOpen] = useState(false);
   const [editIndex, setEditIndex] = useState(null);
-  const calculateMetrics = () => {
+  const calculateMetrics = useMemo(() => {
     return data.reduce(
       (acc, item) => {
         const value = Number(String(item.value).replace("$", ""));
@@ -29,10 +29,10 @@ const AdminView = ({ inventory, isAdmin }) => {
         categories: new Set(),
       }
     );
-  };
+  }, [data]);
 
   const { totalProducts, totalValue, outOfStock, categories } =
-    calculateMetrics(); //use a state
+    calculateMetrics; //use a state
 
   const handleDelete = (id) => {
     const updatedData = data.slice(0, id).concat(data.slice(id + 1));
